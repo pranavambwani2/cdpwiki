@@ -3,22 +3,133 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login | Password-protected pages on Netlify</title>
-    <link rel="stylesheet" href="/styles.css" />
+    <title>AG Wiki | Sign in</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📑</text></svg>"></link>
+    <style>
+      @font-face {
+        font-family: Light;
+        src: url("pro/fonts/300-Light.otf") format("opentype");
+      }
+
+      @font-face {
+        font-family: Regular;
+        src: url("pro/fonts/400-Regular.otf") format("opentype");
+      }
+
+      @font-face {
+        font-family: Medium;
+        src: url("pro/fonts/500-Medium.otf") format("opentype");
+      }
+
+      @font-face {
+        font-family: Semibold;
+        src: url("pro/fonts/600-Semibold.otf") format("opentype");
+      }
+
+      @font-face {
+        font-family: Bold;
+        src: url("pro/fonts/700-Bold.otf") format("opentype");
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: "Light", "HelveticaNeue-Light", "Helvetica Neue Light",
+          "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight: 300;
+      }
+
+      input,
+      textarea,
+      button {
+        font-family: inherit;
+      }
+
+      iframe {
+        width: 100%;
+      }
+
+      button:focus {
+        outline: 0;
+      }
+
+      .header {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 0;
+        background: #ffffff;
+        -webkit-box-shadow: 0px 13px 15px 0px rgba(0,0,0,0.1);
+        -moz-box-shadow: 0px 13px 15px 0px rgba(0,0,0,0.1);
+        box-shadow: 0px 13px 15px 0px rgba(0,0,0,0.1);
+      }
+
+      h1 {
+        margin: 50px 20px 10px;
+        font-size: 56px;
+        font-weight: 300;
+      }
+
+      h2 {
+        font-family: "Medium", "HelveticaNeue-Light", "Helvetica Neue Light",
+          "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-size: 32px;
+        font-weight: 400;
+      }
+
+      p {
+        margin: 5px 20px;
+        font-size: 24px;
+        font-weight: 300;
+      }
+
+      .small-btn {
+        font-family: "Semibold", "HelveticaNeue-Light", "Helvetica Neue Light",
+          "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        cursor: pointer;
+        padding: 8px 16px;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: 700;
+        background-color: #000000;
+        border: none;
+        transition: 0.3s;
+        margin-top: auto;
+      }
+    </style>
   </head>
   <body>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/pro/">Pro</a>
-    </nav>
-    <main>
-      <h1>Login</h1>
-      <p>This is where you gain access to the "/pro/" area.</p>
-      <form action="/.netlify/functions/login" method="POST">
-        <label for="password">Password</label>
-        <input type="password" name="password" id="password" />
-        <button type="submit">Get access</button>
-      </form>
-    </main>
+    <section class="header">
+      <img alt="Mattel Logo" loading="lazy" class="builder-image css-1hbf805" src="https://cdn.builder.io/api/v1/image/assets%2F8be5a791274f462fa36ba4e5344b7513%2Fb435f1e62dd0476b95d4d11fa240b066?width=70" style="height: 50px;">
+    </section>
+    <h2>CDP Wiki</h2>
+    <p>This is where you gain access to the "/pro/" area.</p>
+    <form
+      action="/.netlify/functions/login"
+      method="POST"
+      style="margin-top: 20px"
+    >
+      <label for="password" style="margin-right: 8px">Password</label>
+      <input
+        style="padding: 8px 16px"
+        type="password"
+        name="password"
+        id="password"
+      />
+      <button type="submit" class="small-btn">Get access</button>
+    </form>
   </body>
 </html>
