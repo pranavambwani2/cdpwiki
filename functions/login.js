@@ -8,7 +8,7 @@ exports.handler = async function (event, context) {
   const endpoint = `${process.env.URL}/.netlify/identity/token`;
   const data = querystring.stringify({
     grant_type: 'password',
-    username: 'email@example.com',
+    username: 'agwiki@mattel.com',
     password: password,
   });
   const options = {
@@ -35,7 +35,7 @@ exports.handler = async function (event, context) {
       statusCode: 302,
       headers: {
         'Cache-Control': 'no-cache',
-        Location: `/login/?redirect=${encodeURIComponent(redirect)}`,
+        Location: `/`,
       },
     };
   }
